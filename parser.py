@@ -96,7 +96,7 @@ async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE
         conn.commit()
         movie_url = search_movie(api_key,user_message)
         await update.message.reply_text(movie_url)  # Отвечаем пользователю
-app = ApplicationBuilder().token("7933889026:AAGXRiGLo1f0t2L99TXJ354-mlZmFbBw69Q").build()
+app = ApplicationBuilder().token("TOKEN").build()
 app.add_handler(CallbackQueryHandler(button))
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_message))
